@@ -69,8 +69,7 @@
 				7BFF47122AE29CAA00F90066 /* App */,
 				7BFF47152AE29D4500F90066 /* Modules */,
 				7BFF471B2AE29D9700F90066 /* Resources */,
-				7BFF47232AE2AAEF00F90066 /* Constants */,
-				7BFF47242AE2AAF600F90066 /* Extensions */,
+				7BFF47292AE2ABFC00F90066 /* Utils */,
 			);
 			path = newsapp;
 			sourceTree = "<group>";
@@ -168,6 +167,15 @@
 				7BFF47252AE2AB0E00F90066 /* String+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7BFF47292AE2ABFC00F90066 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7BFF47232AE2AAEF00F90066 /* Constants */,
+				7BFF47242AE2AAF600F90066 /* Extensions */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
