@@ -13,9 +13,18 @@ final class NewsViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
 
+    // View Model
+    var viewModel: NewsViewModel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableView()
+
+        // viewModel
+        self.viewModel.delegate = self
+
+        // searchbar
+        self.searchBar.delegate = self
     }
 
     func registerTableView() {
@@ -25,13 +34,54 @@ final class NewsViewController: UIViewController {
     }
 }
 
-extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+// MARK: - Helpers
+private extension NewsViewController {
+
+    @objc func fetchMedia(_ sender: UISearchBar) {
+        guard let searchTerm = sender.text else { return }
+        self.viewModel.searchService(with: searchTerm, page: 1)
     }
-    
+}
+
+// MARK: - UISearchBarDelegate
+extension NewsViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.count > 2 {
+            NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(fetchMedia(_:)), object: searchBar)
+            perform(#selector(fetchMedia(_:)), with: searchBar, afterDelay: 0.75)
+        } else {
+            self.tableView.reloadData()
+        }
+    }
+}
+
+// MARK: NewsViewModelDelegate
+extension NewsViewController: NewsViewModelDelegate {
+
+    func successSearchService() {
+        print("success")
+    }
+
+    func failSearchService(error: ApiError) {
+        AlertManager.shared.showAlert(with: error)
+    }
+}
+
+// MARK: UITableViewDataSource & UITableViewDelegate
+extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.viewModel.newsNumberOfItemsInSection()
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as? NewsCell else { return UITableViewCell() }
+
+        cell.configureCell(with: self.viewModel.newsCellForItemAt(index: indexPath.row))
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 108
     }
 }

@@ -18,6 +18,9 @@ target 'newsapp' do
   # Download Image
   pod 'Kingfisher', '~> 7.0'
 
+  # Snapkit
+  pod 'SnapKit', '~> 5.6.0'
+
   # Firebase
   firebase_shared_pods
 

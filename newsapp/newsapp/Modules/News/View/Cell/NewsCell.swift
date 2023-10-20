@@ -9,15 +9,24 @@ import UIKit
 
 class NewsCell: UITableViewCell {
 
+    // MARK: IBOutlets
+    @IBOutlet weak var imgNews: UIImageView!
+    @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet weak var labelDescriptiopn: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        selectionStyle = .none
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    func configureCell(with model: Article) {
+        // Label Title
+        labelTitle.text = model.title
 
-        // Configure the view for the selected state
+        // Label Description
+        labelDescriptiopn.text = model.description
+
+        // Image News
+        imgNews.downloadImage(imageUrl: model.urlToImage)
     }
-    
 }

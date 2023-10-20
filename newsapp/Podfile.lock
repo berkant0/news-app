@@ -125,6 +125,7 @@ PODS:
   - PromisesObjC (2.3.1)
   - PromisesSwift (2.3.1):
     - PromisesObjC (= 2.3.1)
+  - SnapKit (5.6.0)
 
 DEPENDENCIES:
   - Firebase/Analytics
@@ -132,6 +133,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - Kingfisher (~> 7.0)
   - Moya (~> 15.0)
+  - SnapKit (~> 5.6.0)
 
 SPEC REPOS:
   trunk:
@@ -153,6 +155,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - PromisesSwift
+    - SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: 0e92e751b3e9e66d7982db43919d01f313b8eb91
@@ -173,7 +176,8 @@ SPEC CHECKSUMS:
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: c50d2056b5253dadbd6c2bea79b0674bd5a52fa4
   PromisesSwift: 28dca69a9c40779916ac2d6985a0192a5cb4a265
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: d220a394fd52a9127fa058349877ec039e85a022
+PODFILE CHECKSUM: d9f7b43e2964d725e71b884d1edffb6b32e45153
 
 COCOAPODS: 1.12.1

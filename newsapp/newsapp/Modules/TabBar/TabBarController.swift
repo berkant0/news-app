@@ -12,9 +12,10 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let newsViewController = NewsViewController()
-        newsViewController.tabBarItem = UITabBarItem(title: "News", image: UIImage(systemName: "newspaper"), tag: 0)
+        let newsBuilder = NewsBuilder.build()
+        newsBuilder.tabBarItem = UITabBarItem(title: "News", image: UIImage(systemName: "newspaper"), tag: 0)
 
-        viewControllers = [newsViewController]
+        viewControllers = [newsBuilder]
+
     }
 }
