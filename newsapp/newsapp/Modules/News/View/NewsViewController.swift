@@ -26,6 +26,10 @@ final class NewsViewController: UIViewController {
         // searchbar
         self.searchBar.delegate = self
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        visibleTabBar(isVisible: true)
+    }
 
     func registerTableView() {
         tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
