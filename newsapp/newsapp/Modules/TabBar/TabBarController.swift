@@ -15,7 +15,10 @@ class TabBarController: UITabBarController {
         let newsBuilder = NewsBuilder.build()
         newsBuilder.tabBarItem = UITabBarItem(title: "News", image: UIImage(systemName: "newspaper"), tag: 0)
 
-        viewControllers = [newsBuilder]
+        let favoritesBuilder = FavoritesBuilder.build()
+        favoritesBuilder.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(systemName: "heart"), tag: 1)
+        
+        viewControllers = [newsBuilder, favoritesBuilder]
 
     }
 }

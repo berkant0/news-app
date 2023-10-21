@@ -54,7 +54,7 @@
                 <constraint firstItem="gaU-MP-68z" firstAttribute="top" secondItem="0Hc-4i-KPo" secondAttribute="bottom" id="gLL-Sd-Vlg"/>
                 <constraint firstItem="GSA-HH-cOK" firstAttribute="trailing" secondItem="gaU-MP-68z" secondAttribute="trailing" id="tg5-pP-SsW"/>
             </constraints>
-            <point key="canvasLocation" x="539" y="-292"/>
+            <point key="canvasLocation" x="538.16793893129773" y="-292.25352112676057"/>
         </view>
     </objects>
     <resources>

@@ -8,5 +8,9 @@
 import Foundation
 
 final class FavoritesBuilder {
-    
+    static func build() -> FavoritesViewController {
+        let controller = FavoritesViewController.instantiateFromNibOrSelfIntance()
+        
+        return controller
+    }
 }
