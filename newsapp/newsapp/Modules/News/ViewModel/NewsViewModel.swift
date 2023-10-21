@@ -82,4 +82,8 @@ extension NewsViewModel {
     func newsCellForItemAt(index: Int) -> Article {
         return news[index]
     }
+    
+    func newsDidSelectItemAt(indexPath: IndexPath) -> Article {
+        return news[indexPath.row]
+    }
 }

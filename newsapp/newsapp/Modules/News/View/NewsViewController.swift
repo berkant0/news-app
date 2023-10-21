@@ -59,7 +59,7 @@ extension NewsViewController: UISearchBarDelegate {
 extension NewsViewController: NewsViewModelDelegate {
 
     func successSearchService() {
-        print("success")
+        self.tableView.reloadData()
     }
 
     func failSearchService(error: ApiError) {
@@ -79,6 +79,10 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
 
         cell.configureCell(with: self.viewModel.newsCellForItemAt(index: indexPath.row))
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.navigationController?.pushViewController(NewsDetailBuilder.build(item: self.viewModel.newsDidSelectItemAt(indexPath: indexPath)), animated: true)
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
