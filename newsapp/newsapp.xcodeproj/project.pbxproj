@@ -17,6 +17,10 @@
 		7BB98BAC2AE31E0300F049C0 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BB98BAA2AE31E0300F049C0 /* WebViewController.xib */; };
 		7BB98BAE2AE31E1200F049C0 /* WebViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB98BAD2AE31E1200F049C0 /* WebViewBuilder.swift */; };
 		7BB98BB02AE31F7A00F049C0 /* NewsDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB98BAF2AE31F7A00F049C0 /* NewsDetailViewModel.swift */; };
+		7BB98BB72AE3E02D00F049C0 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB98BB52AE3E02D00F049C0 /* FavoritesViewController.swift */; };
+		7BB98BB82AE3E02D00F049C0 /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BB98BB62AE3E02D00F049C0 /* FavoritesViewController.xib */; };
+		7BB98BBA2AE3E04100F049C0 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB98BB92AE3E04100F049C0 /* FavoritesViewModel.swift */; };
+		7BB98BBC2AE3E04C00F049C0 /* FavoritesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB98BBB2AE3E04C00F049C0 /* FavoritesBuilder.swift */; };
 		7BFF46FF2AE298C700F90066 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFF46FE2AE298C700F90066 /* AppDelegate.swift */; };
 		7BFF47012AE298C700F90066 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFF47002AE298C700F90066 /* SceneDelegate.swift */; };
 		7BFF47032AE298C700F90066 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFF47022AE298C700F90066 /* NewsViewController.swift */; };
@@ -54,6 +58,10 @@
 		7BB98BAA2AE31E0300F049C0 /* WebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		7BB98BAD2AE31E1200F049C0 /* WebViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewBuilder.swift; sourceTree = "<group>"; };
 		7BB98BAF2AE31F7A00F049C0 /* NewsDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewModel.swift; sourceTree = "<group>"; };
+		7BB98BB52AE3E02D00F049C0 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		7BB98BB62AE3E02D00F049C0 /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
+		7BB98BB92AE3E04100F049C0 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		7BB98BBB2AE3E04C00F049C0 /* FavoritesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesBuilder.swift; sourceTree = "<group>"; };
 		7BFF46FB2AE298C700F90066 /* newsapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newsapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BFF46FE2AE298C700F90066 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BFF47002AE298C700F90066 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +171,41 @@
 			path = Builder;
 			sourceTree = "<group>";
 		};
+		7BB98BB12AE3DFE500F049C0 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				7BB98BB22AE3DFEC00F049C0 /* Builder */,
+				7BB98BB42AE3E00800F049C0 /* ViewModel */,
+				7BB98BB32AE3DFF400F049C0 /* View */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		7BB98BB22AE3DFEC00F049C0 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				7BB98BBB2AE3E04C00F049C0 /* FavoritesBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		7BB98BB32AE3DFF400F049C0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7BB98BB52AE3E02D00F049C0 /* FavoritesViewController.swift */,
+				7BB98BB62AE3E02D00F049C0 /* FavoritesViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7BB98BB42AE3E00800F049C0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7BB98BB92AE3E04100F049C0 /* FavoritesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		7BFF46F22AE298C700F90066 = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +249,7 @@
 		7BFF47152AE29D4500F90066 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				7BB98BB12AE3DFE500F049C0 /* Favorites */,
 				7BB98BA62AE31DD000F049C0 /* WebView */,
 				7BFF47162AE29D4C00F90066 /* News */,
 				7BB98B9A2AE316B300F049C0 /* NewsDetail */,
@@ -489,6 +533,7 @@
 				7BB98BA12AE319A700F049C0 /* NewsDetailViewController.xib in Resources */,
 				7BFF47082AE298C800F90066 /* Assets.xcassets in Resources */,
 				7BB98BAC2AE31E0300F049C0 /* WebViewController.xib in Resources */,
+				7BB98BB82AE3E02D00F049C0 /* FavoritesViewController.xib in Resources */,
 				7BFF472E2AE2B41E00F90066 /* NewsCell.xib in Resources */,
 				7BFF47142AE29D0E00F90066 /* NewsViewController.xib in Resources */,
 			);
@@ -544,9 +589,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BB98BA52AE31D2B00F049C0 /* UIViewController+Extensions.swift in Sources */,
+				7BB98BB72AE3E02D00F049C0 /* FavoritesViewController.swift in Sources */,
 				7BFF474A2AE2BE7100F90066 /* LoadingManager.swift in Sources */,
 				7BFF47472AE2BE7100F90066 /* Definitions.swift in Sources */,
 				7BFF474E2AE2C0F200F90066 /* ApiConstants.swift in Sources */,
+				7BB98BBC2AE3E04C00F049C0 /* FavoritesBuilder.swift in Sources */,
 				7BB98BA02AE319A700F049C0 /* NewsDetailViewController.swift in Sources */,
 				7BFF47442AE2BE7100F90066 /* ApiError.swift in Sources */,
 				7BFF471E2AE2A3F800F90066 /* NewsBuilder.swift in Sources */,
@@ -564,6 +611,7 @@
 				7BFF47492AE2BE7100F90066 /* BaseRepository.swift in Sources */,
 				7BFF47202AE2A41D00F90066 /* NewsViewModel.swift in Sources */,
 				7BB98BA32AE31CAF00F049C0 /* NewsDetailBuilder.swift in Sources */,
+				7BB98BBA2AE3E04100F049C0 /* FavoritesViewModel.swift in Sources */,
 				7BFF47452AE2BE7100F90066 /* SearchResponse.swift in Sources */,
 				7BFF46FF2AE298C700F90066 /* AppDelegate.swift in Sources */,
 				7BFF47012AE298C700F90066 /* SceneDelegate.swift in Sources */,
