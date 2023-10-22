@@ -18,12 +18,32 @@ class NewsDetailViewController: UIViewController {
     @IBOutlet weak var releaseDateLabel: UILabel!
 
     private var itemUrl = ""
+    var news: Article?
     
+    private let favoriteButton = UIButton(type: .custom)
+    private let shareButton = UIButton(type: .custom)
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        navigationItem.title = "Detail"
+        
+        setupNavigationItems()
+        
         self.visibleTabBar(isVisible: false)
+    }
+    
+    func setupNavigationItems() {
+        navigationItem.title = "Detail"
+        
+        shareButton.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
+        shareButton.addTarget(self, action: #selector(shareButtonTapped), for: .touchUpInside)
+
+        favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        favoriteButton.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
+        
+        let shareBarButton = UIBarButtonItem(customView: shareButton)
+        let favoriteBarButton = UIBarButtonItem(customView: favoriteButton)
+        
+        navigationItem.rightBarButtonItems = [favoriteBarButton,shareBarButton]
     }
 
     func configure(with item: Article) {
@@ -33,12 +53,32 @@ class NewsDetailViewController: UIViewController {
             self.newsTitlelabel.text = item.title
             self.newsDescriptionLabel.text = item.description
             self.newsAuthorLabel.text = item.author
-            self.releaseDateLabel.text = item.publishedAt.formatIsoStringToReadableDate()
-            self.itemUrl = item.url
+            self.releaseDateLabel.text = item.publishedAt?.formatIsoStringToReadableDate()
+            self.itemUrl = item.url ?? ""
+            
+            let isSaved = FavoriteNewsManager.shared.isNewsFavorite(news: item)
+            self.favoriteButton.setImage(isSaved ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart"), for: .normal)
         }
     }
-    
+
     @IBAction func openNewsSource() {
         openWebviewController(pageTitle: "News Source", urlString: itemUrl, isModal: true)
+    }
+    
+    @objc func shareButtonTapped() {
+        shareURL(itemUrl)
+    }
+
+    @objc func favoriteButtonTapped() {
+        if let news = news {
+            let isSaved = FavoriteNewsManager.shared.isNewsFavorite(news: news)
+            if isSaved {
+                FavoriteNewsManager.shared.removeFavoriteNews(news: news)
+                favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            } else {
+                FavoriteNewsManager.shared.addFavoriteNews(news: news)
+                favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            }
+        }
     }
 }

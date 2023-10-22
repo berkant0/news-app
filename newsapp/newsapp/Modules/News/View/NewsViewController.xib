@@ -22,36 +22,25 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="gaU-MP-68z">
-                    <rect key="frame" x="0.0" y="103" width="393" height="56"/>
+                    <rect key="frame" x="0.0" y="59" width="393" height="56"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DQB-Bg-cIC">
-                    <rect key="frame" x="0.0" y="159" width="393" height="659"/>
+                    <rect key="frame" x="0.0" y="115" width="393" height="703"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
-                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Hc-4i-KPo">
-                    <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <items>
-                        <navigationItem title="News App" id="6qw-aD-IV0"/>
-                    </items>
-                </navigationBar>
             </subviews>
             <viewLayoutGuide key="safeArea" id="GSA-HH-cOK"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="gaU-MP-68z" firstAttribute="leading" secondItem="rkO-ED-hKx" secondAttribute="leading" id="2Qb-lk-09i"/>
-                <constraint firstItem="0Hc-4i-KPo" firstAttribute="top" secondItem="GSA-HH-cOK" secondAttribute="top" id="98g-Kh-yKO"/>
                 <constraint firstItem="GSA-HH-cOK" firstAttribute="bottom" secondItem="DQB-Bg-cIC" secondAttribute="bottom" id="Bz5-Uw-hEY"/>
                 <constraint firstItem="GSA-HH-cOK" firstAttribute="trailing" secondItem="DQB-Bg-cIC" secondAttribute="trailing" id="Kqt-pD-gra"/>
-                <constraint firstItem="GSA-HH-cOK" firstAttribute="trailing" secondItem="0Hc-4i-KPo" secondAttribute="trailing" id="Tw7-L2-RcH"/>
-                <constraint firstItem="0Hc-4i-KPo" firstAttribute="leading" secondItem="rkO-ED-hKx" secondAttribute="leading" id="UrO-h4-H8W"/>
                 <constraint firstItem="DQB-Bg-cIC" firstAttribute="leading" secondItem="GSA-HH-cOK" secondAttribute="leading" id="Zyi-OY-s2Y"/>
+                <constraint firstItem="gaU-MP-68z" firstAttribute="top" secondItem="GSA-HH-cOK" secondAttribute="top" id="bOX-wU-9NW"/>
                 <constraint firstItem="DQB-Bg-cIC" firstAttribute="top" secondItem="gaU-MP-68z" secondAttribute="bottom" id="cI4-1O-h1M"/>
-                <constraint firstItem="gaU-MP-68z" firstAttribute="top" secondItem="0Hc-4i-KPo" secondAttribute="bottom" id="gLL-Sd-Vlg"/>
                 <constraint firstItem="GSA-HH-cOK" firstAttribute="trailing" secondItem="gaU-MP-68z" secondAttribute="trailing" id="tg5-pP-SsW"/>
             </constraints>
             <point key="canvasLocation" x="538.16793893129773" y="-292.25352112676057"/>

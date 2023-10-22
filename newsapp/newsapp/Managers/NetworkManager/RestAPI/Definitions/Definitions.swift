@@ -38,6 +38,7 @@ extension MTargetType {
         let headers: [String: String] = [
             "Content-Type": "application/json; charset=UTF-8",
             "Accept": "*/*",
+            "X-Api-Key" : "878c5663b41f47dd95a62d2cb6e155cd"
         ]
 
         return headers

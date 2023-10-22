@@ -22,11 +22,11 @@ struct SearchResponse: Codable {
 struct Article: Codable {
     let source: Source
     let author: String?
-    let title, description: String
-    let url: String
-    let urlToImage: String
-    let publishedAt: String
-    let content: String
+    let title, description: String?
+    let url: String?
+    let urlToImage: String?
+    let publishedAt: String?
+    let content: String?
 }
 
 // MARK: - Source

@@ -11,6 +11,7 @@ final class NewsDetailBuilder {
     static func build(item: Article) -> NewsDetailViewController {
         let controller = NewsDetailViewController.instantiateFromNibOrSelfIntance()
         controller.configure(with: item)
+        controller.news = item
         
         return controller
     }

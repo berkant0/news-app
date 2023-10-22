@@ -12,6 +12,5 @@ extension Constants {
     class API {
         static let baseUrl = "https://newsapi.org/v2/"
         static let search = "everything"
-        static let apiKey = "90f78b5e459f4557a6d285161db89387"
     }
 }

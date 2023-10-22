@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavoritesViewController" customModule="newsapp" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="emg-Z6-7t9" id="XBb-7r-GR7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,9 +19,21 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="emg-Z6-7t9">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="1" y="20"/>
+            <constraints>
+                <constraint firstItem="emg-Z6-7t9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="75o-Ua-j90"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="emg-Z6-7t9" secondAttribute="trailing" id="FYg-o8-V10"/>
+                <constraint firstItem="emg-Z6-7t9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="KhY-eL-nVC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="emg-Z6-7t9" secondAttribute="bottom" id="nyO-Pz-g3s"/>
+            </constraints>
+            <point key="canvasLocation" x="0.76335877862595414" y="19.718309859154932"/>
         </view>
     </objects>
     <resources>

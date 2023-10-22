@@ -27,12 +27,11 @@ extension NewsService: MTargetType {
     var task: MoyaTask {
         switch self {
         case .search(let parameters):
-            let parameters: [String: String] = [
+            let requestParameters: [String: String] = [
                 "q": parameters.searchTerm,
                 "page": String(parameters.page),
-                "apiKey": Constants.API.apiKey
             ]
-            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
+            return .requestParameters(parameters: requestParameters, encoding: URLEncoding.queryString)
         }
     }
 }

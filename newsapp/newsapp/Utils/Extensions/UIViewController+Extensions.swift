@@ -31,11 +31,11 @@ extension UIViewController {
 
 extension UIViewController {
     func openWebviewController(pageTitle: String? = nil,
-                               urlString: String? = nil,
-                               isModal: Bool = false) {
+        urlString: String? = nil,
+        isModal: Bool = false) {
         let webViewController = WebViewBuilder.generate(pageTitle: pageTitle,
-                                                        urlString: urlString,
-                                                        isModal: isModal)
+            urlString: urlString,
+            isModal: isModal)
         if isModal {
             self.navigationController?.pushViewController(webViewController, animated: true)
         } else {
@@ -43,14 +43,18 @@ extension UIViewController {
         }
     }
 
-    func openShareUIActivityViewController(shareContent: [Any]) {
-        let activityController = UIActivityViewController(activityItems: shareContent,
-                                                          applicationActivities: nil)
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            activityController.popoverPresentationController?.sourceView = self.view
-            activityController.popoverPresentationController?.sourceRect = self.view.bounds
-            activityController.popoverPresentationController?.permittedArrowDirections = [.any]
+    func shareURL(_ urlString: String) {
+        if let url = URL(string: urlString) {
+            let activityViewController = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+
+            // UIActivityViewController'ı göster
+            if let presenter = activityViewController.popoverPresentationController {
+                // iPad gibi cihazlarda uygun bir konum belirleme
+                presenter.sourceView = view
+                presenter.sourceRect = view.bounds
+            }
+
+            present(activityViewController, animated: true, completion: nil)
         }
-        self.present(activityController, animated: true, completion: nil)
     }
 }

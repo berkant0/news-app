@@ -5,7 +5,7 @@
 //  Created by Berkant Dağtekin on 20.10.2023.
 //
 
-import UIKit
+import Foundation
 
 protocol NewsViewModelDelegate: AnyObject {
     func successSearchService()
@@ -28,6 +28,7 @@ final class NewsViewModel {
     }
 
     // Pagination
+    private var maxPage = 5
     private var pageNumber = 1
 
     init(newsRepository: NewsRepositoryProtocol,
@@ -38,12 +39,14 @@ final class NewsViewModel {
         self.loadingManager = loadingManager
     }
 
-    func getSearchServiceWithPagination(term: String) {
+    func getSearchServiceWithPagination(term: String, completion: @escaping () -> Void) {
         if !isReachLastPagePagination() {
             self.pageNumber += 1
             self.searchService(with: term, page: self.pageNumber)
+            completion()
         } else {
             self.pageNumber = 1
+            completion()
         }
     }
 
@@ -56,10 +59,11 @@ final class NewsViewModel {
             if let error = error {
                 self.alertManager.showAlert(with: error)
             } else if let response = response {
-                guard response.totalResults > 0 else {
+                guard response.totalResults > 0 || response.articles?.count != 0 else {
                     self.delegate?.failSearchService(error: .notFound)
                     return
                 }
+                
                 self.responseSearch = response
                 self.delegate?.successSearchService()
             }
@@ -67,7 +71,6 @@ final class NewsViewModel {
     }
 
     private func isReachLastPagePagination() -> Bool {
-        let maxPage = 10
         return self.pageNumber >= maxPage
     }
 }
