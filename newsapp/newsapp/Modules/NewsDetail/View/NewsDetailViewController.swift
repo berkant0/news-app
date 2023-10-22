@@ -17,7 +17,6 @@ class NewsDetailViewController: UIViewController {
     @IBOutlet weak var newsAuthorLabel: UILabel!
     @IBOutlet weak var releaseDateLabel: UILabel!
 
-    private var itemUrl = ""
     var news: Article?
     
     private let favoriteButton = UIButton(type: .custom)
@@ -54,7 +53,6 @@ class NewsDetailViewController: UIViewController {
             self.newsDescriptionLabel.text = item.description
             self.newsAuthorLabel.text = item.author
             self.releaseDateLabel.text = item.publishedAt?.formatIsoStringToReadableDate()
-            self.itemUrl = item.url ?? ""
             
             let isSaved = FavoriteNewsManager.shared.isNewsFavorite(news: item)
             self.favoriteButton.setImage(isSaved ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart"), for: .normal)
@@ -62,11 +60,11 @@ class NewsDetailViewController: UIViewController {
     }
 
     @IBAction func openNewsSource() {
-        openWebviewController(pageTitle: "News Source", urlString: itemUrl, isModal: true)
+        openWebviewController(pageTitle: "News Source", urlString: news?.url, isModal: true)
     }
     
     @objc func shareButtonTapped() {
-        shareURL(itemUrl)
+        shareURL(news?.url ?? "")
     }
 
     @objc func favoriteButtonTapped() {
