@@ -15,7 +15,9 @@ This project was made for news search using "https://newsapi.org" API.
 - **Builder**
 - **Singleton**
 - **Dependency Injection**
-
+- **Firebase**
+- **Swiftlint**
+    
 ## Application Features
 
 - Research news on the desired topic
