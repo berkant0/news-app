@@ -19,9 +19,14 @@ class NewsDetailViewController: UIViewController {
 
     var news: Article?
     
-    private let favoriteButton = UIButton(type: .custom)
-    private let shareButton = UIButton(type: .custom)
-
+    lazy var favoriteButton: UIBarButtonItem = {
+        return UIBarButtonItem(image: UIImage(systemName: "heart")?.withRenderingMode(.alwaysOriginal) ?? UIImage(), style: .plain, target: self, action: #selector(favoriteButtonTapped))
+    }()
+    
+    lazy var shareButton: UIBarButtonItem = {
+        return UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up")?.withRenderingMode(.alwaysOriginal) ?? UIImage(), style: .plain, target: self, action: #selector(shareButtonTapped))
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,17 +37,8 @@ class NewsDetailViewController: UIViewController {
     
     private func setupNavigationItems() {
         navigationItem.title = "Detail"
-        
-        shareButton.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
-        shareButton.addTarget(self, action: #selector(shareButtonTapped), for: .touchUpInside)
-
-        favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
-        favoriteButton.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
-        
-        let shareBarButton = UIBarButtonItem(customView: shareButton)
-        let favoriteBarButton = UIBarButtonItem(customView: favoriteButton)
-        
-        navigationItem.rightBarButtonItems = [favoriteBarButton,shareBarButton]
+                
+        navigationItem.rightBarButtonItems = [favoriteButton,shareButton]
     }
 
     func configure(with item: Article) {
@@ -55,7 +51,7 @@ class NewsDetailViewController: UIViewController {
             self.releaseDateLabel.text = item.publishedAt?.formatIsoStringToReadableDate()
             
             let isSaved = FavoriteNewsManager.shared.isNewsFavorite(news: item)
-            self.favoriteButton.setImage(isSaved ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart"), for: .normal)
+            self.favoriteButton.image = isSaved ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
         }
     }
 
@@ -72,10 +68,10 @@ class NewsDetailViewController: UIViewController {
             let isSaved = FavoriteNewsManager.shared.isNewsFavorite(news: news)
             if isSaved {
                 FavoriteNewsManager.shared.removeFavoriteNews(news: news)
-                favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+                favoriteButton.image = UIImage(systemName: "heart")
             } else {
                 FavoriteNewsManager.shared.addFavoriteNews(news: news)
-                favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                favoriteButton.image = UIImage(systemName: "heart.fill")
             }
         }
     }
