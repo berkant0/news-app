@@ -32,8 +32,9 @@ final class NewsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         visibleTabBar(isVisible: true)
     }
-
-    func registerTableView() {
+    
+    //MARK: - Functions
+    private func registerTableView() {
         tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
         tableView.dataSource = self
         tableView.delegate = self
@@ -101,7 +102,7 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func scrollToTopOfTableView() {
-        let indexPath = IndexPath(row: 0, section: 0) // İlk satırın indeksi
+        let indexPath = IndexPath(row: 0, section: 0)
         self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
     }
 

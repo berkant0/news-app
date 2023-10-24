@@ -10,8 +10,10 @@ import WebKit
 
 class WebViewController: UIViewController {
     
+    // MARK: IBOutlets
     @IBOutlet weak var webView: WKWebView!
 
+    // MARK: Properties
     var pageTitle: String? = nil
     var urlString: String? = nil
 
@@ -26,7 +28,7 @@ class WebViewController: UIViewController {
         }
     }
 
-    func setupWebview() {
+    private func setupWebview() {
         self.webView.scrollView.showsVerticalScrollIndicator = false
         self.webView.scrollView.showsHorizontalScrollIndicator = false
         self.webView.scrollView.alwaysBounceVertical = false

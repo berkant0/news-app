@@ -8,8 +8,10 @@
 import UIKit
 
 final class FavoritesViewController: UIViewController {
+    // MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
 
+    // MARK: Properties
     private var savedNewsArray: [Article] = []
     
     override func viewDidLoad() {

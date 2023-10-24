@@ -30,7 +30,7 @@ class NewsDetailViewController: UIViewController {
         self.visibleTabBar(isVisible: false)
     }
     
-    func setupNavigationItems() {
+    private func setupNavigationItems() {
         navigationItem.title = "Detail"
         
         shareButton.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
