@@ -90,16 +90,16 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.navigationController?.pushViewController(NewsDetailBuilder.build(item: self.viewModel.newsDidSelectItemAt(indexPath: indexPath)), animated: true)
     }
-    
+
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let searchText = searchBar.searchTextField.text, searchText.count > 2,
-              indexPath.row == self.viewModel.news.count - 1 else { return }
+            indexPath.row == self.viewModel.news.count - 1 else { return }
 
         self.viewModel.getSearchServiceWithPagination(term: searchText) {
             self.scrollToTopOfTableView()
         }
     }
-    
+
     func scrollToTopOfTableView() {
         let indexPath = IndexPath(row: 0, section: 0) // İlk satırın indeksi
         self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)

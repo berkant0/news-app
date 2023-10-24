@@ -24,6 +24,9 @@
 		7BB98BC02AE3E2A800F049C0 /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB98BBE2AE3E2A800F049C0 /* FavoritesCell.swift */; };
 		7BB98BC12AE3E2A800F049C0 /* FavoritesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BB98BBF2AE3E2A800F049C0 /* FavoritesCell.xib */; };
 		7BB98BC62AE3E48900F049C0 /* FavoriteNewsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB98BC52AE3E48900F049C0 /* FavoriteNewsManager.swift */; };
+		7BB98BC82AE5C75000F049C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BB98BC72AE5C75000F049C0 /* GoogleService-Info.plist */; };
+		7BCB60C32AE6A63600FE53D8 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCB60C22AE6A63600FE53D8 /* AnalyticsManager.swift */; };
+		7BCB60C52AE6ACD800FE53D8 /* AppDelegate+PushNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCB60C42AE6ACD800FE53D8 /* AppDelegate+PushNotifications.swift */; };
 		7BFF46FF2AE298C700F90066 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFF46FE2AE298C700F90066 /* AppDelegate.swift */; };
 		7BFF47012AE298C700F90066 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFF47002AE298C700F90066 /* SceneDelegate.swift */; };
 		7BFF47032AE298C700F90066 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFF47022AE298C700F90066 /* NewsViewController.swift */; };
@@ -68,6 +71,10 @@
 		7BB98BBE2AE3E2A800F049C0 /* FavoritesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
 		7BB98BBF2AE3E2A800F049C0 /* FavoritesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesCell.xib; sourceTree = "<group>"; };
 		7BB98BC52AE3E48900F049C0 /* FavoriteNewsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteNewsManager.swift; sourceTree = "<group>"; };
+		7BB98BC72AE5C75000F049C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7BCB60C22AE6A63600FE53D8 /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
+		7BCB60C42AE6ACD800FE53D8 /* AppDelegate+PushNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+PushNotifications.swift"; sourceTree = "<group>"; };
+		7BCB60C62AE7CB4F00FE53D8 /* newsapp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = newsapp.entitlements; sourceTree = "<group>"; };
 		7BFF46FB2AE298C700F90066 /* newsapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newsapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BFF46FE2AE298C700F90066 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BFF47002AE298C700F90066 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -230,6 +237,14 @@
 			path = FavoriteManager;
 			sourceTree = "<group>";
 		};
+		7BCB60C12AE6A62200FE53D8 /* AnalyticsManager */ = {
+			isa = PBXGroup;
+			children = (
+				7BCB60C22AE6A63600FE53D8 /* AnalyticsManager.swift */,
+			);
+			path = AnalyticsManager;
+			sourceTree = "<group>";
+		};
 		7BFF46F22AE298C700F90066 = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +266,7 @@
 		7BFF46FD2AE298C700F90066 /* newsapp */ = {
 			isa = PBXGroup;
 			children = (
+				7BCB60C62AE7CB4F00FE53D8 /* newsapp.entitlements */,
 				7BFF47122AE29CAA00F90066 /* App */,
 				7BFF47322AE2BE7100F90066 /* Managers */,
 				7BFF47152AE29D4500F90066 /* Modules */,
@@ -264,8 +280,10 @@
 			isa = PBXGroup;
 			children = (
 				7BFF46FE2AE298C700F90066 /* AppDelegate.swift */,
+				7BCB60C42AE6ACD800FE53D8 /* AppDelegate+PushNotifications.swift */,
 				7BFF47002AE298C700F90066 /* SceneDelegate.swift */,
 				7BFF470C2AE298C800F90066 /* Info.plist */,
+				7BB98BC72AE5C75000F049C0 /* GoogleService-Info.plist */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -391,6 +409,7 @@
 		7BFF47322AE2BE7100F90066 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				7BCB60C12AE6A62200FE53D8 /* AnalyticsManager */,
 				7BB98BC22AE3E33900F049C0 /* FavoriteManager */,
 				7BFF47332AE2BE7100F90066 /* NetworkManager */,
 				7BFF47402AE2BE7100F90066 /* LoadingManager */,
@@ -506,6 +525,7 @@
 				7BFF46F82AE298C700F90066 /* Frameworks */,
 				7BFF46F92AE298C700F90066 /* Resources */,
 				686F6BCEB1FD0F88C5DB6955 /* [CP] Embed Pods Frameworks */,
+				7BB98BC92AE5CE5900F049C0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -556,6 +576,7 @@
 			files = (
 				7BFF470B2AE298C800F90066 /* LaunchScreen.storyboard in Resources */,
 				7BB98BA12AE319A700F049C0 /* NewsDetailViewController.xib in Resources */,
+				7BB98BC82AE5C75000F049C0 /* GoogleService-Info.plist in Resources */,
 				7BFF47082AE298C800F90066 /* Assets.xcassets in Resources */,
 				7BB98BAC2AE31E0300F049C0 /* WebViewController.xib in Resources */,
 				7BB98BB82AE3E02D00F049C0 /* FavoritesViewController.xib in Resources */,
@@ -576,6 +597,8 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-newsapp/Pods-newsapp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-newsapp/Pods-newsapp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
@@ -584,6 +607,26 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-newsapp/Pods-newsapp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		7BB98BC92AE5CE5900F049C0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
 		};
 		C16C183B7E30052D9BD9E0A7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -641,8 +684,10 @@
 				7BB98BC02AE3E2A800F049C0 /* FavoritesCell.swift in Sources */,
 				7BB98BBA2AE3E04100F049C0 /* FavoritesViewModel.swift in Sources */,
 				7BFF47452AE2BE7100F90066 /* SearchResponse.swift in Sources */,
+				7BCB60C52AE6ACD800FE53D8 /* AppDelegate+PushNotifications.swift in Sources */,
 				7BFF46FF2AE298C700F90066 /* AppDelegate.swift in Sources */,
 				7BFF47012AE298C700F90066 /* SceneDelegate.swift in Sources */,
+				7BCB60C32AE6A63600FE53D8 /* AnalyticsManager.swift in Sources */,
 				7BB98BB02AE31F7A00F049C0 /* NewsDetailViewModel.swift in Sources */,
 				7BFF47282AE2AB3B00F90066 /* Constants.swift in Sources */,
 			);
@@ -696,7 +741,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -787,6 +832,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = newsapp/newsapp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -818,6 +864,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = newsapp/newsapp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
